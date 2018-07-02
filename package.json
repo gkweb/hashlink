@@ -5,9 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
     "dev": "rollup -c -w",
-    "serve": "http-server"
+    "serve": "npm run build && npm run build:example && http-server example",
+    "build": "rollup -c",
+    "build:example": "webpack --config webpack.example.config.js"
   },
   "keywords": [
     "hash",
@@ -24,6 +25,8 @@
     "http-server": "^0.11.1",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.6",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "webpack": "^4.14.0",
+    "webpack-command": "^0.3.1"
   }
 }
