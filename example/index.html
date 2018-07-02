@@ -6,22 +6,75 @@
   <title>Hash link test markup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="example.bundle.js"></script>
+    <style>
+    html {
+        min-height: 100%;
+    }
+
+    body {
+        padding: 2em 1em;
+        color: white;
+        background: linear-gradient(0, #202, #404) 0 0/cover no-repeat;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        min-height: 100%;
+    }
+
+    a {
+        color: #FAC863;
+    }
+
+    a:visited {
+        color: #FAC863;
+    }
+
+    .container {
+        width: 80%;
+        min-height: 30em;
+        padding: 2em 2em 4em;
+        margin: 0 auto;
+        background: #343436;
+        box-shadow: 0 1em 1em 1em rgba(0, 0, 0, 0.2);
+    }
+
+    nav > ul {
+        margin: 0;
+        padding: 0; 
+        list-style: none;
+
+    }
+
+    nav > ul > li {
+        margin-bottom: .25em;
+    }
+    
+    </style>
 </head>
 <body>
-
+<div class="container">
+<h1>Hash link examples</h1>
+<p>Click on the nav below to see examples in action:</p>
+<h2 id="trigger_display">No trigger</h2>
 <nav>
 <ul>
     <li>
         <a href="#/something">Something</a>
     </li>
     <li>
-        <a href="#/something/1">Something with param 1</a>
+        <a href="#/something/1">Something with 1 param</a>
     </li>
     <li>
-        <a href="#/something/3">Something with param 3</a>
+        <a href="#/test">Test</a>
+    </li>
+    <li>
+        <a href="#/deep/link/to/the/rescue">Deep</a>
+    </li>
+    <li>
+        <a href="#/no/trigger">No trigger associated</a>
     </li>
 </ul>
 </nav>
+
+</div>
 
 </body>
 </html>

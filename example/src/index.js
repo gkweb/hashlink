@@ -2,17 +2,35 @@ const Hashlink = require('../../dist/main.js');
 
 module.exports = (function () {
     window.addEventListener('load', function () {
-        console.log('LOADED');
-        var hashlink = new Hashlink({onChange: event => {
-            console.log(event, 'Has changed123123');
-        }}); // Default options
+        var triggerDisplay = document.getElementById('trigger_display');
 
+        // Intantiate the Hashlink class
+        var hashlink = new HashLink({onChange: event => {
+            console.log(event, 'Hash has changed...');
+        }});
+
+        var cb = function (params) {
+            triggerDisplay.innerText = `[ ${params[0]} ] trigger callback has run`;
+        };
+
+        // Trigger callbacks added here
         hashlink.add({
             slug: 'something',
-            callback: (params) => {
-                console.log('something triggered');
-            }
-        })
+            callback: (params) => (cb(params))
+        });
+
+        hashlink.add({
+            slug: 'deep',
+            callback: (params) => (cb(params))
+        });
+
+        hashlink.add({
+            slug: 'test',
+            callback: (params) => (cb(params))
+        });
+
+        // run on first load
+        hashlink.run(document.location.hash);
     });
 })();
 
